@@ -1,0 +1,41 @@
+[
+    {
+      "id": 1,
+      "producto": "Monitor",
+      "precio": 350.00,
+      "disponible": true,
+      "caracteristicas": [
+        "34 pulgadas",
+        "IPS",
+        "144Hz"
+      ]
+    },
+    {
+        "id": 2,
+      "producto": "Teclado",
+      "precio": 60.00,
+      "disponible": true,
+      "caracteristicas": [
+        "Adaptable"
+      ]
+    },
+    {
+        "id": 3,
+      "producto": "Ratón",
+      "precio": 45.00,
+      "disponible": false,
+      "caracteristicas": [
+        "300000 clicks",
+        "cómodo"
+      ]
+    },
+    {
+        "id": 4,
+      "producto": "Alfombrilla",
+      "precio": 15.00,
+      "disponible": true,
+      "caracteristicas": [
+        "Grande"
+      ]
+    }
+    ]
