@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import { CarritoStore } from './components/CarritoStore'
 
@@ -8,7 +7,7 @@ function App() {
     <>
       <CarritoStore></CarritoStore>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
