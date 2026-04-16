@@ -1,34 +1,34 @@
 import { useEffect, useState } from "react"
 import Productos from './productos.json'
 
-interface Producto{
-    id: Number,
-    producto: String,
-    precio: Number,
-    disponible: Boolean,
-    caracteristicas: String[]
-};
+interface Producto {
+    id: number;
+    producto: string;
+    precio: number;
+    disponible: boolean;
+    caracteristicas: string[];
+}
 
 export function CarritoStore() {
     // Total
     const [total, setTotal] = useState<number>(0)
     
-    const [carrito, setCarrito] = useState(() => {
-        const data = localStorage.getItem("carrito");
-        return data ? JSON.parse(data) : [];
+    const [carrito, setCarrito] = useState<Producto[]>(() => {
+        const data = localStorage.getItem("carrito")
+        return data ? (JSON.parse(data) as Producto[]) : []
     })
-    //TODO: Actulizar el total del carrito
+
     useEffect(() => {
         localStorage.setItem("carrito", JSON.stringify(carrito))
+        const nextTotal = carrito.reduce((sum, item) => sum + item.precio, 0)
+        setTotal(nextTotal)
     }, [carrito])
 
     const handleAnadirProducto = (producto: Producto) => {
-        // TODO: ...
         setCarrito([
             ...carrito,
             producto
-        ]);
-        setTotal(total + producto.precio)
+        ])
     }
 
     const vaciarCarrito = () => {
